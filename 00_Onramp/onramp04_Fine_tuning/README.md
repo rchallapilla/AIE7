@@ -30,7 +30,7 @@ In this lecture, we explore the nuances of fine-tuning large language models usi
 
 This notebook is designed to be run on **Google Colab**, offering free access to GPU resources essential for fine-tuning large language models. Google Colab's cloud-based environment eliminates the need for local GPU hardware and comes pre-installed with most of the required dependencies. Click the link below to open the notebook in Google Colab and start your fine-tuning journey:
 
-[Open the Notebook in Google Colab](https://colab.research.google.com/drive/18jF-pOlz-cFt0SkHVQ_9PBuGAH0VumrG?usp=sharing)
+[Open the Notebook in Google Colab](https://colab.research.google.com/drive/1Yj4gyPfW44nwtoWfffCxP9zx0YeLz0Rs)
 
 A big shout out to @AIMakerspace for their support!
 
