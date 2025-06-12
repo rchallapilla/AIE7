@@ -28,7 +28,7 @@ Weekly sessions every Thursday (1 PM ET / 7 PM CET) leading up to Cohort 7 launc
 - **June 12** – Aligning LLMs
 
 ### Protocols
-- **June 19** – Model Context Protocol (MCP) & Agent2Agent (A2A)
+- **June 20** – Model Context Protocol (MCP) & Agent2Agent (A2A)
 
 ---
 
