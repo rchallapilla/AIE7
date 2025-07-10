@@ -1,38 +1,33 @@
+
 <p align = "center" draggable=”false” ><img src="https://github.com/AI-Maker-Space/LLM-Dev-101/assets/37101144/d1343317-fa2f-41e1-8af1-1dbb18399719" 
      width="200px"
      height="auto"/>
 </p>
 
-## <h1 align="center" id="heading">Session 5: Our First Agent with LangGraph</h1>
+## <h1 align="center" id="heading">Session 6: Multi-Agent with LangGraph</h1>
 
 | 🤓 Pre-work | 📰 Session Sheet | ⏺️ Recording     | 🖼️ Slides        | 👨‍💻 Repo         | 📝 Homework      | 📁 Feedback       |
 |:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|
-| [Session 5: Pre-Work](https://www.notion.so/Session-5-Agents-21dcd547af3d801280a6eb64c638b438?source=copy_link#21dcd547af3d81f99ab1fc47bd985f58)| [Session 5: Agents](https://www.notion.so/Session-5-Agents-21dcd547af3d801280a6eb64c638b438) | [Recording!](https://us02web.zoom.us/rec/share/FdGaKx3GgN3DKK6-E7X4qiRjKFqbJXlyv6BRlXjDLwOFJAwCcGMSBHRjhwVO5jOj.9Jlld_-bkFLNJ0ll)  (.$bq?mJ7) | [Session 5 Slides](https://www.canva.com/design/DAGsm6s70T0/L0ZR8DzmJLWeGetP5DcCTg/edit?utm_content=DAGsm6s70T0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) | You are here! | [Session 5 Assignment: Agents](https://forms.gle/6roSZPAk2c6HDSx67) | [AIE7 Feedback 7/8](https://forms.gle/m4pdbdyBKj1CP5cQ9)
+| [Session 6: Pre-Work](https://www.notion.so/Session-6-Multi-Agent-Applications-with-LangGraph-22bcd547af3d80f7a2e0cc7a2c6d7d8f?source=copy_link#22bcd547af3d8021ac68fade5a7b9df2)| [Session 6: Multi-Agent Applications with LangGraph](https://www.notion.so/Session-6-Multi-Agent-Applications-with-LangGraph-22bcd547af3d80f7a2e0cc7a2c6d7d8f) | Coming soon! | [Session 6 Slides](https://www.canva.com/design/DAGstHQ78gU/D_DHLWAO5KZoQ5R1RjG3YA/edit?utm_content=DAGstHQ78gU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) | You are here! | [Session 6 Assignment: Multi-agents](https://forms.gle/HScbKATi6nCNYZx57)| [AIE7 Feedback 7/10](https://forms.gle/itQqhBW2PY7DTFi76)
 
-
-
-In today's assignment, we'll be creating an Agentic LangChain RAG Application.
+In today's assignment, we'll be creating a MULTI-Agentic LangGraph Application.
 
 - 🤝 Breakout Room #1:
-  1. Install required libraries
-  2. Set Environment Variables
-  3. Creating our Tool Belt
-  4. Creating Our State
-  5. Creating and Compiling A Graph!
+  1. Simple LCEL RAG
+  2. Helper Functions for Agent Graphs
+  3. Research Team - A LangGraph for Researching A Specific Topic
   
 - 🤝 Breakout Room #2:
-  - Part 1: LangSmith Evaluator:
-    1. Creating an Evaluation Dataset
-    2. Adding Evaluators
-  - Part 2:
-    3. Adding Helpfulness Check and "Loop" Limits
-    4. LangGraph for the "Patterns" of GenAI
+  1. Document Writing Team - A LangGraph for Writing, Editing, and Planning a LinkedIn post.
+  2. Meta-Supervisor and Full Graph
 
-### Advanced Build
+### 🚧 OPTIONAL: Advanced Build
 
-You are tasked to create an agent with 3 tools that can research a specific domain of your choice.
+> NOTE: This is an optional task - and is not required to achieve full marks on the assignment.
 
-You must deploy the resultant agent with a React (or Custom) frontend.
+Build a graph to produce a social media post about a given Machine Learning paper. 
+
+The graph should employ an additional team that verifies the correctness of the produced paper, and verify it fits the theme and style of your selected social media platform.
 
 ## Ship 🚢
 
@@ -55,7 +50,7 @@ Here's a template to get you started:
 ```
 🚀 Exciting News! 🚀
 
-I am thrilled to announce that I have just built and shipped an Agentic Retrieval Augmented Generation Application with LangChain! 🎉🤖
+I am thrilled to announce that I have just built and shipped an Multi-Agent Application with LangGraph! 🎉🤖
 
 🔍 Three Key Takeaways:
 1️⃣ 
@@ -75,9 +70,10 @@ Feel free to reach out if you're curious or would like to collaborate on similar
 ### Main Homework Assignment
 
 Follow these steps to prepare and submit your homework assignment:
-1. Create a branch of your `AIE7` repo to track your changes. Example command: `git checkout -b s05-assignment`
-2. Respond to the activities and questions in the `Introduction_to_LangGraph_for_Agents_Assignment_Version.ipynb` notebook:
+1. Create a branch of your `AIE7` repo to track your changes. Example command: `git checkout -b s06-assignment`
+2. Respond to the activities and questions in the `Multi_Agent_RAG_LangGraph.ipynb` notebook:
     + Edit the markdown cells of the activities and questions then enter your responses
+    + Edit/Create code cell(s) where necessary as part of an activity
     + NOTE: Remember to create a header (example: `##### ✅ Answer:`) to help the grader find your responses
 3. Commit, and push your completed notebook to your `origin` repository. _NOTE: Do not merge it into your main branch._
 4. Make sure to include all of the following on your Homework Submission Form:
