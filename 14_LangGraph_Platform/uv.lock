@@ -19,6 +19,7 @@ dependencies = [
     { name = "pymupdf" },
     { name = "python-dotenv" },
     { name = "qdrant-client" },
+    { name = "requests" },
     { name = "tiktoken" },
 ]
 
@@ -36,6 +37,7 @@ requires-dist = [
     { name = "pymupdf", specifier = ">=1.24.10" },
     { name = "python-dotenv", specifier = ">=1.0.1" },
     { name = "qdrant-client", specifier = ">=1.8.0" },
+    { name = "requests", specifier = ">=2.32.3" },
     { name = "tiktoken", specifier = ">=0.7.0" },
 ]
 
