@@ -87,9 +87,54 @@ Do this by creating a Simple Agent that can make API calls to the 🤖Agent Node
 
 What are the core components of an `AgentCard`?
 
+**Answer:**
+Based on the agent card we retrieved from our running A2A server, the core components of an `AgentCard` are:
+
+1. **Basic Metadata:**
+   - `name`: "General Purpose Agent" - Human-readable agent name
+   - `description`: Description of agent capabilities and purpose
+   - `version`: "1.0.0" - Agent version for compatibility tracking
+   - `url`: Agent endpoint URL for communication
+
+2. **Protocol Information:**
+   - `protocolVersion`: "0.3.0" - A2A protocol version supported
+   - `preferredTransport`: "JSONRPC" - Communication transport method
+
+3. **Capabilities:**
+   - `streaming`: true - Supports real-time streaming responses
+   - `pushNotifications`: true - Can send proactive notifications
+
+4. **Content Modes:**
+   - `defaultInputModes`: ["text", "text/plain"] - Supported input formats
+   - `defaultOutputModes`: ["text", "text/plain"] - Supported output formats
+
+5. **Skills Array:** Each skill contains:
+   - `id`: Unique identifier (e.g., "web_search", "arxiv_search", "rag_search")
+   - `name`: Human-readable skill name
+   - `description`: What the skill accomplishes
+   - `tags`: Categorization tags for discovery
+   - `examples`: Usage examples to guide interaction
+
 ### ❓ Question #2:
 
 Why is A2A (and other such protocols) important in your own words?
+
+**Answer:**
+A2A protocols are critically important because they create the foundation for an interconnected AI agent ecosystem, similar to how HTTP enabled the modern web. Here's why they matter:
+
+1. **Agent Interoperability:** Different AI agents built with various frameworks (LangGraph, AutoGen, CrewAI, etc.) can communicate in a standardized way, breaking down silos between AI systems.
+
+2. **Composable AI Architecture:** Instead of building monolithic AI systems, we can create specialized agents that excel at specific tasks and then compose them into more powerful, multi-agent workflows.
+
+3. **Standardized Discovery:** The agent card mechanism enables automatic discovery of agent capabilities, allowing dynamic agent selection based on requirements rather than hard-coded integrations.
+
+4. **Scalable AI Networks:** As AI agents proliferate, protocols like A2A enable them to form networks that can solve complex problems through collaboration, much like microservices architectures in software development.
+
+5. **Quality Assurance at Scale:** Built-in evaluation mechanisms (like the helpfulness loop) ensure response quality is maintained across agent interactions, creating trust in multi-agent systems.
+
+6. **Future-Proof Integration:** Versioned protocols allow the ecosystem to evolve while maintaining backward compatibility, preventing fragmentation as the technology advances.
+
+In essence, A2A protocols transform AI from isolated tools into a collaborative network of specialized intelligences that can work together to tackle problems beyond the capability of any single agent.
 
 ### 🚧 Advanced Build:
 
