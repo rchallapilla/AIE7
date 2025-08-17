@@ -2,12 +2,19 @@
 
 ## 📊 Complete System Architecture
 
-This diagram shows the original A2A protocol implementation (blue/purple nodes) plus our new development work (green nodes) that demonstrates agent-to-agent communication.
+This diagram shows the original A2A protocol implementation (blue/purple nodes) plus my new development work (green nodes) that demonstrates agent-to-agent communication.
 
 ```mermaid
 graph TD
-    %% Original A2A Protocol Flow (Blue/Purple nodes)
-    A["👤 User Query"] --> B["🤖 Agent Node<br/>(LLM + Tools)"]
+    %% User Input and Client Agent Flow (Green nodes)
+    A["👤 User Query"] --> M["🆕 Client Agent<br/>(LangGraph)"]
+    M --> N["🔍 Extract Query<br/>Node"]
+    N --> O["🌐 A2A Protocol<br/>Communication"]
+    O --> P["📋 Agent Card<br/>Discovery"]
+    P --> Q["📡 JSON-RPC<br/>Message"]
+    
+    %% A2A Server Flow (Blue/Purple nodes)
+    Q --> B["🤖 A2A Server<br/>Agent Node<br/>(LLM + Tools)"]
     B --> C{"🔍 Tool Calls<br/>Needed?"}
     C -->|"Yes"| D["⚡ Action Node<br/>(Tool Execution)"]
     C -->|"No"| E["🎯 Helpfulness Node<br/>(A2A Evaluation)"]
@@ -19,17 +26,12 @@ graph TD
     H --> B
     I --> B
     E --> J{"✅ Is Response<br/>Helpful?"}
-    J -->|"Yes (Y)"| K["🏁 END<br/>(Task Complete)"]
+    J -->|"Yes (Y)"| K["🏁 A2A Server<br/>Complete"]
     J -->|"No (N)"| L{"🔄 Loop Count<br/>< 10?"}
     L -->|"Yes"| B
     L -->|"No"| K
     
-    %% NEW DEVELOPMENT WORK (Green nodes) - Activity #1
-    M["🆕 Client Agent<br/>(LangGraph)"] --> N["🔍 Extract Query<br/>Node"]
-    N --> O["🌐 A2A Protocol<br/>Communication"]
-    O --> P["📋 Agent Card<br/>Discovery"]
-    P --> Q["📡 JSON-RPC<br/>Message"]
-    Q --> B
+    %% Response Flow Back to Client Agent
     K --> R["📤 Response<br/>Processing"]
     R --> S["🔄 State Update<br/>(ClientAgentState)"]
     S --> T["🏁 Client Agent<br/>Complete"]
@@ -120,4 +122,4 @@ The new development work integrates with the original A2A protocol at key points
 3. **Response Processing**: Seamless integration with existing workflow
 4. **Testing Validation**: Comprehensive system verification
 
-This diagram demonstrates how our Activity #1 implementation extends the original A2A protocol to enable agent-to-agent communication while maintaining the core helpfulness evaluation loop.
+This diagram demonstrates how my Activity #1 implementation extends the original A2A protocol to enable agent-to-agent communication while maintaining the core helpfulness evaluation loop.
