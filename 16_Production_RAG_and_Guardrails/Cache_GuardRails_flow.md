@@ -1,27 +1,51 @@
-### RAG + Guardrails + Caching flow
+## 📊 Production RAG with Cashing + Guardrails Pipeline
 
 This diagram shows how a user query flows through retrieval, caching, generation, and safety checks in this project.
 - **Embedding cache**: persisted under `./cache/embeddings`.
 - **LLM cache**: configurable in memory or SQLite via `setup_llm_cache(...)`.
 - **Guardrails**: post-generation validation before returning a response.
 
+
+
 ```mermaid
-flowchart TD
-    A[User Query] --> B{Check LLM cache}
-    B -- Cache hit --> R1[Return cached LLM response]
-    B -- Cache miss --> C[Generate embeddings]
+graph TD
+    %% User Input
+    A["👤 User Query"] --> B["🧠 LangGraph Agent"]
 
-    C --> C1[Embedding cache at ./cache/embeddings]
-    C --> D[Retrieve context from Vector DB (Qdrant)]
-    D --> E[Combine context + query]
-    E --> F[Call LLM/tools (LangGraph Agent)]
+    %% LLM Cache
+    B --> C{"🗂️ LLM Cache<br/>(Memory / SQLite)"}
+    C -->|Hit| Z1["📤 Return Cached LLM Response"]
+    C -->|Miss| D["🔡 Embed Query Text"]
 
-    F --> G[Guardrails]
-    G --> H{Guardrails check}
-    H -- pass --> I[Return final response]
-    H -- fail --> J[Return guard alert or sanitized output]
+    %% Embedding + RAG Flow
+    D --> E["💾 Embedding Cache<br/>(LocalFileStore)"]
+    E --> F["📚 Vector Search<br/>(Qdrant In-Memory)"]
+    F --> G["🧩 Combine Context + Query"]
 
-    B --> B1[LLM cache (memory or SQLite)]
+    %% LLM Call + Guardrails
+    G --> H["🤖 OpenAI LLM Call<br/>(w/ Tools via LangGraph)"]
+    H --> I["🛡️ Guardrails Check"]
+
+    %% Guardrails Decision
+    I --> J{"✅ Passed All Checks?"}
+    J -->|Yes| K["📤 Return Final Response"]
+    J -->|No| L["⚠️ Return Guard Alert / Sanitized Output"]
+
+    %% Styling
+    style A fill:#2e7d32,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style B fill:#1e88e5,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style C fill:#1e88e5,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style D fill:#6a1b9a,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style E fill:#6a1b9a,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style F fill:#6a1b9a,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style G fill:#6a1b9a,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style H fill:#3949ab,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style I fill:#e65100,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style J fill:#e65100,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style K fill:#2e7d32,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style L fill:#c62828,stroke:#ffffff,stroke-width:3px,color:#ffffff
+    style Z1 fill:#2e7d32,stroke:#ffffff,stroke-width:3px,color:#ffffff
+
 ```
 
 ### Implementation notes
